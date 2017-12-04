@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   Caption = 'mybatis DAO version 1.0 build by riverbo 2017.06.16 '
   ClientHeight = 537
-  ClientWidth = 900
+  ClientWidth = 904
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,12 +13,13 @@ object frmMain: TfrmMain
   OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 0
-    Top = 198
-    Width = 900
+    Top = 195
+    Width = 904
     Height = 4
     Cursor = crVSplit
     Align = alTop
@@ -28,17 +29,19 @@ object frmMain: TfrmMain
   object StatusBar1: TStatusBar
     Left = 0
     Top = 518
-    Width = 900
+    Width = 904
     Height = 19
     Panels = <>
+    ExplicitWidth = 900
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 900
+    Width = 904
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 1
+    ExplicitWidth = 900
     object btnDo: TButton
       Left = 0
       Top = 0
@@ -58,80 +61,80 @@ object frmMain: TfrmMain
       OnClick = Button2Click
     end
   end
-  object GroupBox2: TGroupBox
+  object GroupBox1: TGroupBox
     Left = 0
     Top = 29
-    Width = 900
-    Height = 169
+    Width = 904
+    Height = 166
     Align = alTop
     Caption = 'Public'
     TabOrder = 2
     object Label3: TLabel
       Left = 24
-      Top = 35
+      Top = 28
       Width = 70
       Height = 13
       Caption = 'targetPackage'
     end
     object Label4: TLabel
       Left = 24
-      Top = 89
+      Top = 82
       Width = 68
       Height = 13
       Caption = 'targetProject:'
     end
     object Label5: TLabel
       Left = 24
-      Top = 63
+      Top = 56
       Width = 51
       Height = 13
       Caption = 'tableName'
     end
     object Label6: TLabel
       Left = 25
-      Top = 142
+      Top = 135
       Width = 50
       Height = 13
       Caption = 'className'
     end
     object Label7: TLabel
       Left = 24
-      Top = 116
+      Top = 109
       Width = 57
       Height = 13
       Caption = 'subPackage'
     end
     object Label2: TLabel
       Left = 463
-      Top = 35
+      Top = 28
       Width = 53
       Height = 13
       Caption = 'driverClass'
     end
     object Label1: TLabel
       Left = 463
-      Top = 62
+      Top = 55
       Width = 71
       Height = 13
       Caption = 'connectionURL'
     end
     object Label8: TLabel
       Left = 463
-      Top = 89
+      Top = 82
       Width = 31
       Height = 13
       Caption = 'userId'
     end
     object Label9: TLabel
       Left = 463
-      Top = 116
+      Top = 109
       Width = 46
       Height = 13
       Caption = 'password'
     end
     object targetPackage: TEdit
       Left = 102
-      Top = 32
+      Top = 25
       Width = 333
       Height = 21
       TabOrder = 0
@@ -139,7 +142,7 @@ object frmMain: TfrmMain
     end
     object edt_target_project: TEdit
       Left = 102
-      Top = 86
+      Top = 79
       Width = 333
       Height = 21
       Color = clBtnFace
@@ -149,7 +152,7 @@ object frmMain: TfrmMain
     end
     object edt_tableName: TEdit
       Left = 102
-      Top = 59
+      Top = 52
       Width = 333
       Height = 21
       TabOrder = 2
@@ -157,7 +160,7 @@ object frmMain: TfrmMain
     end
     object edt_className: TEdit
       Left = 102
-      Top = 140
+      Top = 133
       Width = 333
       Height = 21
       Color = clBtnFace
@@ -166,7 +169,7 @@ object frmMain: TfrmMain
     end
     object subPackage: TEdit
       Left = 102
-      Top = 113
+      Top = 106
       Width = 333
       Height = 21
       TabOrder = 4
@@ -174,50 +177,47 @@ object frmMain: TfrmMain
     end
     object edtDriverClass: TEdit
       Left = 552
-      Top = 32
+      Top = 25
       Width = 330
       Height = 21
-      ReadOnly = True
       TabOrder = 5
       Text = 'com.mysql.jdbc.Driver'
     end
     object edtConnectionURL: TEdit
       Left = 552
-      Top = 59
+      Top = 52
       Width = 330
       Height = 21
-      ReadOnly = True
       TabOrder = 6
       Text = 'jdbc:mysql://127.0.0.1:3306/ecarpo_bms'
     end
     object edtUserId: TEdit
       Left = 552
-      Top = 86
+      Top = 79
       Width = 330
       Height = 21
-      ReadOnly = True
       TabOrder = 7
       Text = 'root'
     end
     object edtPassword: TEdit
       Left = 552
-      Top = 113
+      Top = 106
       Width = 330
       Height = 21
-      ReadOnly = True
       TabOrder = 8
       Text = '123456'
     end
   end
   object Memo1: TMemo
     Left = 0
-    Top = 202
-    Width = 900
-    Height = 316
+    Top = 199
+    Width = 904
+    Height = 319
     Align = alClient
-    Lines.Strings = (
-      'Memo1')
     ScrollBars = ssVertical
     TabOrder = 3
+    ExplicitTop = 202
+    ExplicitWidth = 900
+    ExplicitHeight = 316
   end
 end

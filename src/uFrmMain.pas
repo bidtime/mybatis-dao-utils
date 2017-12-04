@@ -13,7 +13,7 @@ type
     ToolBar1: TToolBar;
     btnDo: TButton;
     Button2: TButton;
-    GroupBox2: TGroupBox;
+    GroupBox1: TGroupBox;
     Label3: TLabel;
     Label4: TLabel;
     targetPackage: TEdit;
@@ -37,8 +37,13 @@ type
     procedure Button2Click(Sender: TObject);
     procedure btnDoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
+    FBName: string;
     { Private declarations }
+    function getAppPath(): string;
+    procedure ctrl_file(const bWrite: boolean=false);
+    procedure setFPath(const S: string);
   public
     { Public declarations }
   end;
@@ -47,6 +52,8 @@ var
   frmMain: TfrmMain;
 
 implementation
+
+uses IniFiles;
 
 {$R *.dfm}
 
@@ -144,6 +151,30 @@ end;
 function getXMLContent(const dbProp, daoXML: string): string;
 begin
   Result := format(XML_CONTENT, [dbProp, daoXML]);
+end;
+
+function readFromFile(const fname: string): string;
+var strs: TStrings;
+begin
+  strs := TStringList.Create;
+  try
+    strs.LoadFromFile(fname);
+    Result := strs.Text;
+  finally
+    strs.Free;
+  end;
+end;
+
+procedure saveToFile(const fname, ctx: string);
+var strs: TStrings;
+begin
+  strs := TStringList.Create;
+  try
+    strs.Text := ctx;
+    strs.SaveToFile(fname, TEncoding.UTF8);
+  finally
+    strs.Free;
+  end;
 end;
 
 {
@@ -259,6 +290,33 @@ begin
   self.Memo1.Text := getXMLContent(dbSection, daoSection);
 end;
 
+procedure TfrmMain.ctrl_file(const bWrite: boolean);
+var myIniFile: TIniFile;
+  i: integer;
+  ctrl: TControl;
+begin
+ myIniFile := Tinifile.create(self.FBName);
+ try
+   for I := 0 to self.GroupBox1.ControlCount - 1 do begin
+     ctrl := GroupBox1.Controls[I];
+     if (ctrl is TEdit) then begin
+       if bWrite then begin
+         myIniFile.WriteString('combox', TComboBox(ctrl).Name, TComboBox(ctrl).Text);
+       end else begin
+         TComboBox(ctrl).Text := myIniFile.ReadString('combox', TComboBox(ctrl).Name, TComboBox(ctrl).Text);
+       end;
+     end;
+   end;
+ finally
+   myIniFile.Free;
+ end;
+end;
+
+function TfrmMain.getAppPath: string;
+begin
+  Result := ExtractFilePath(Application.ExeName);
+end;
+
 procedure TfrmMain.Button2Click(Sender: TObject);
 begin
   close;
@@ -266,7 +324,19 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  setFPath(self.getAppPath());
   self.WindowState := wsMaximized;
+end;
+
+procedure TfrmMain.FormDestroy(Sender: TObject);
+begin
+  ctrl_file(true);
+end;
+
+procedure TfrmMain.setFPath(const S: string);
+begin
+  FBName := S + '\' + 'setting.ini';
+  ctrl_file();
 end;
 
 end.
