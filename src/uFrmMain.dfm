@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'mybatis DAO version 1.0 build by riverbo 2017.06.16 '
+  Caption = 'mybatis DAO version 1.1 build by riverbo 2017.12.04 '
   ClientHeight = 537
   ClientWidth = 904
   Color = clBtnFace
