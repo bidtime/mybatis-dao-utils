@@ -260,7 +260,7 @@ procedure TfrmMain.btnDoClick(Sender: TObject);
     edt_className.Text := className;
 
     classNameDO := className + 'DO';
-    classNameDAO := className + 'DAO';
+    classNameDAO := className + 'Mapper';
 
     subPackage.text := getSubPackage(edt_tableName.Text);
     cur_subpackage := targetPackage.Text + '.' + subPackage.text;

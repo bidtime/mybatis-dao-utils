@@ -32,7 +32,6 @@ object frmMain: TfrmMain
     Width = 904
     Height = 19
     Panels = <>
-    ExplicitWidth = 900
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -41,7 +40,6 @@ object frmMain: TfrmMain
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 1
-    ExplicitWidth = 900
     object btnDo: TButton
       Left = 0
       Top = 0
@@ -216,8 +214,5 @@ object frmMain: TfrmMain
     Align = alClient
     ScrollBars = ssVertical
     TabOrder = 3
-    ExplicitTop = 202
-    ExplicitWidth = 900
-    ExplicitHeight = 316
   end
 end
