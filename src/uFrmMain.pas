@@ -77,6 +77,8 @@ const XML_CONTENT = '<?xml version="1.0" encoding="UTF-8"?>' + #13#10 +
 '    <plugin type="com.ecarpo.framework.mybatis.generator.MybatisSerializablePlugin"></plugin>' + #13#10 +
 '    -->' + #13#10 +
 
+'    <plugin type="com.ecarpo.framework.mybatis.generator.FormatMapperPlugin"/>' + #13#10 +
+
 '' + #13#10 +
 
 '    <commentGenerator type="com.ecarpo.framework.mybatis.generator.MybatisCommentGenerator">' + #13#10 +

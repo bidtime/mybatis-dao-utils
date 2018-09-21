@@ -1,9 +1,9 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'mybatis DAO version 1.2 build by riverbo 2018.09.10 '
-  ClientHeight = 537
-  ClientWidth = 904
+  Caption = 'mybatis DAO version 1.3 build by riverbo 2018.09.21'
+  ClientHeight = 577
+  ClientWidth = 901
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object frmMain: TfrmMain
   object Splitter1: TSplitter
     Left = 0
     Top = 195
-    Width = 904
+    Width = 901
     Height = 4
     Cursor = crVSplit
     Align = alTop
@@ -28,15 +28,15 @@ object frmMain: TfrmMain
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 518
-    Width = 904
+    Top = 558
+    Width = 901
     Height = 19
     Panels = <>
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 904
+    Width = 901
     Height = 29
     Caption = 'ToolBar1'
     TabOrder = 1
@@ -62,7 +62,7 @@ object frmMain: TfrmMain
   object GroupBox1: TGroupBox
     Left = 0
     Top = 29
-    Width = 904
+    Width = 901
     Height = 166
     Align = alTop
     Caption = 'Public'
@@ -143,8 +143,6 @@ object frmMain: TfrmMain
       Top = 79
       Width = 333
       Height = 21
-      Color = clBtnFace
-      ReadOnly = True
       TabOrder = 1
       Text = './src/main/java'
     end
@@ -209,8 +207,8 @@ object frmMain: TfrmMain
   object Memo1: TMemo
     Left = 0
     Top = 199
-    Width = 904
-    Height = 319
+    Width = 901
+    Height = 359
     Align = alClient
     ScrollBars = ssVertical
     TabOrder = 3
