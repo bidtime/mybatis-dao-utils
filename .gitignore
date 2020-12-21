@@ -28,7 +28,6 @@
 
 # Delphi compiler-generated binaries (safe to delete)
 *.exe
-*.dll
 *.bpl
 *.bpi
 *.dcp
@@ -61,6 +60,34 @@
 __history/
 __recovery/
 *.~*
+bin/rec
+component
+Debug
+Release
+*.eof
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
 *.stat
+*.log
+
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
